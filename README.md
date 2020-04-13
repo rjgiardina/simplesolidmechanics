@@ -37,16 +37,21 @@ Linear material:
 
 Power-law material:
 >K = 645.117
+
 >m = 0.15823
 
 Ramberg-Osgood material:
 >a = 5.1799e-6
+
 >b = 1.75018e-18
+
 >n = 6.32
 
 Beam geometry:
 >L = 1.0
+
 >B = 0.00635
+
 >H = 0.00635
 
 A distributed load of zero and a point load of about -8 Newtons or less will result in sub-yield elastic behavior along the entire length of the member. A point load up to about -18 Newtons has a maximum stress value at the fixed end in the neighborhood of yield. This is the area of the stress-strain curve that is most difficult to model using Ramberg-Osgood.
