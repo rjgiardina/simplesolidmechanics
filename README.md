@@ -1,7 +1,7 @@
 # simplesolidmechanics
 A graphical interface for calculating and comparing large deflection member response of a beam under a pure Ramberg-Osgood material behavior against more traditional material models.
 ## Ramberg-Osgood
-Many solid materials behave linearly for small forces and in a nonlinear fashion for larger forces with no well-defined yield point. Ramberg and Osgood developed an expression to model this behavior from material testing data.
+Many solid materials behave almost linearly for small forces and in a nonlinear fashion for larger forces with no well-defined yield point. Ramberg and Osgood developed an expression to model this behavior from material testing data.
 
 >e = f(s) = a\*s + b\*s\*|s|^(n-1)
 
