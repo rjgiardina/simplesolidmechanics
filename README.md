@@ -29,6 +29,37 @@ The user is expected to provide the parameters for whichever material they may w
 ### Major Known Issues
 There are some convergence issues involving the power-law member response for sub-yield forces. This is largely due to known issues with the solve_ivp function in the scipy.integrate package. Only negative forces in the downward direction are allowed at the moment. Currently the program performs no checks on the viability of the input parameters in so far as the feasibility of solutions, so it will always attempt a solution and in some cases may result in erroneous results or the program may hang. These issues will be addressed in future updates.
 
+### Advanced Options
+There are eight advanced options de-activated by default. Clicking the "Advanced Options" box will activate six option panes, five of which are functional. Clicking "Default Values" will restore the default values for every parameter.
+
+>alpha
+
+The alpha parameter is the angle at which the point load P is applied on the tip of the member. Zero is an axial force directed into the member and pi/2 is applied perpendicularly to the tip of the member. Because buckling has not yet been implemented, an alpha equal to zero will result in no displacement from the point load or erroneous results. The default value is an approximation of pi/2 = 1.570796
+
+>elements
+
+The elements parameter determines the number of elements the length of the member is apportioned into. Generally, the greater the number of elements the larger the computational load and the better the solution. However, the solve_ivp function in the scipy.integrate package which is used to solve the initial value problem is very robust even with a relatively small number of elements. The default value is 100.
+
+>curve tol
+
+The curve tol parameter sets the tolerance of a valid solution for the curvature at the fixed end of the member. A bisection approach with a shooting method is used to solve the system. The difference between the two guesses on either side of the root from the bisection approach must meet the set tolerance. Setting the tolerance very low can result in a very long time to find a solution, especially for a power-law member. In general, the necessary tolerances for a power-law member can be very tight on the free end for powers less than 0.5, but by checking the difference on both ends the total number of iterations to an acceptable solution can be reduced. Values smaller than 1e-6 may result in unnecessarily long run times. The default value is 1e-3.
+
+>zero tol
+
+The zero tol parameter sets the tolerance of a valid solution for the curvature at the free end of the member. A bisection approach with a shooting method is used to solve the system. The difference between the two free end values which are a result of the two guesses for curvature on the fixed end on either side of the root from the bisection approach must meet the set tolerance. Setting the tolerance very low can result in a very long time to find a solution, especially for a power-law member. In general, the necessary tolerances for a power-law member can be very tight on the free end for powers less than 0.5, but by checking the difference on both ends the total number of iterations to an acceptable solution can be reduced. Values smaller than 1e-6 may result in unnecessarily long run times. The default value is 1e-5.
+
+>guess 1 AND guess 2
+
+These two functions are not implemented, cannot currently be activated. In a future update the user will be able to supply their own initial guesses to begin the bisection solution approach instead of relying upon the in-built automatic guessing function.
+
+>max iter
+
+This function is not currently implemented, but will be in the next update.
+
+>Solver
+
+This parameter allows the user to select which available solver from the solve_ivp function in the scip.integrate package to use when solving the system. There are six solvers available: RK45, RK23, DOP853, Radau, BDF, and LSODA. The default value is the 5th order explicit Runge-Kutta method, RK45. For more about each of the available solvers, consult the scipy documentation for the solve_ivp function.
+
 ## Example Values
 Below are some values you may wish to try to test the program. We will consider parameters taken from 304 Stainless steel and a long very slender member.
 
