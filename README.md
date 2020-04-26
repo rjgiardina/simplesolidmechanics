@@ -85,4 +85,4 @@ Beam geometry:
 
 >H = 0.00635
 
-A distributed load of zero and a point load of about -8 Newtons or less will result in sub-yield elastic behavior along the entire length of the member. A point load up to about -18 Newtons has a maximum stress value at the fixed end in the neighborhood of yield. This is the area of the stress-strain curve that is most difficult to model using Ramberg-Osgood.
+A distributed load w of zero and a point load P of about -8 Newtons or less will result in sub-yield elastic behavior along the entire length of the member. A point load P up to about -18 Newtons has a maximum stress value at the fixed end in the neighborhood of yield. This is the area of the stress-strain curve that is most difficult to model using Ramberg-Osgood.
